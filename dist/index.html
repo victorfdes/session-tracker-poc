@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>Session Tracker</title>
+  </head>
+  <body>
+    <textarea class="session-details"></textarea>
+    <br>
+    <button class="get-session-button">Get Session Details</button>
+    <hr id="section">
+    <button class="event">Generate an event</button>
+    <br>
+    <a href="#section">
+      <button>Navigate to ID</button>
+    </a>
+    <a href="/dist/">
+      <button>Navigate to ID link</button>
+    </a>
+
+    <script src="browser.js"></script>
+    <script>
+      if (window.insticator) {
+        insticator.init('ABC') // Your Account ID here. Attributes future events etc to this account
+
+        document.querySelector('.get-session-button').addEventListener('click', (e) => {
+          document.querySelector('.session-details').value = JSON.stringify(insticator.getSession())
+          console.log(insticator.getSession())
+        })
+
+        document.querySelector('.event').addEventListener('click', (e) => {
+          insticator.pushEvent('button clicked')
+          console.log('Event Pushed')
+        })
+      }
+    </script>
+  </body>
+</html>
