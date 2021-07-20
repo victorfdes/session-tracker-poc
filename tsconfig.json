@@ -10,7 +10,7 @@
     ],                            
     "strict": true,  
     "esModuleInterop": false,                 
-    "outDir": "dist",
+    "outDir": "docs",
     "rootDir": "./",
     "resolveJsonModule": true
   },

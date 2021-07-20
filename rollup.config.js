@@ -7,12 +7,12 @@ export default {
   output: [
     {
       name: 'main',
-      dir: 'dist',
+      dir: 'docs',
       format: 'esm'
     },
     {
       name: 'browser',
-      file: 'dist/browser.js',
+      file: 'docs/browser.js',
       format: 'umd',
       sourcemap: true
     }
