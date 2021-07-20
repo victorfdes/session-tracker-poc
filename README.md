@@ -34,6 +34,8 @@ insticator.getSession()
 
 This project is also hosted at [https://victorfdes.github.io/session-tracker-poc/](https://victorfdes.github.io/session-tracker-poc/)
 
+The Demo site uses the dev version of the code and includes sourcemaps for easy debugging.
+
 ## Limitations
 
 1. The session object uses cookies which can be read/written by 3rd party code too.
