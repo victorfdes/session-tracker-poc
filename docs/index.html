@@ -19,16 +19,16 @@
 
     <script src="browser.js"></script>
     <script>
-      if (window.insticator) {
-        insticator.init('ABC') // Your Account ID here. Attributes future events etc to this account
+      if (window.sessionator) {
+        sessionator.init('ABC') // Your Account ID here. Attributes future events etc to this account
 
         document.querySelector('.get-session-button').addEventListener('click', (e) => {
-          document.querySelector('.session-details').value = JSON.stringify(insticator.getSession())
-          console.log(insticator.getSession())
+          document.querySelector('.session-details').value = JSON.stringify(sessionator.getSession())
+          console.log(sessionator.getSession())
         })
 
         document.querySelector('.event').addEventListener('click', (e) => {
-          insticator.pushEvent('button clicked')
+          sessionator.pushEvent('button clicked')
           console.log('Event Pushed')
         })
       }

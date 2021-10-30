@@ -16,7 +16,7 @@ interface SessionObject {
   campaign: string | null
 }
 
-export class InsticatorSession {
+export class SessionatorSession {
   #accountId: string | null = null
   constructor (accountId?: string) {
     this.init(accountId)
@@ -85,7 +85,7 @@ export class InsticatorSession {
       }
     }
     let referrer = document.referrer
-    let campaign = InsticatorSession.getCampaignFromURL(window.location.href)
+    let campaign = SessionatorSession.getCampaignFromURL(window.location.href)
     if (!referrer) {
       referrer = existingReferrer
     }
@@ -95,7 +95,7 @@ export class InsticatorSession {
     if (campaign !== existingCampaign) {
       id = makeid(11)
     }
-    const expiration = new Date(InsticatorSession.getSessionExpires())
+    const expiration = new Date(SessionatorSession.getSessionExpires())
     const session = {
       id,
       expiration: formatDate(expiration),
