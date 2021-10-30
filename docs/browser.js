@@ -122,15 +122,15 @@
         }
     }
 
-    var _InsticatorSession_accountId;
-    class InsticatorSession {
+    var _SessionatorSession_accountId;
+    class SessionatorSession {
         constructor(accountId) {
-            _InsticatorSession_accountId.set(this, null);
+            _SessionatorSession_accountId.set(this, null);
             this.init(accountId);
         }
         init(accountId) {
             if (accountId) {
-                __classPrivateFieldSet(this, _InsticatorSession_accountId, accountId, "f");
+                __classPrivateFieldSet(this, _SessionatorSession_accountId, accountId, "f");
                 this.initSession();
                 let previousUrl = '';
                 const urlObserver = new MutationObserver((mutations) => {
@@ -146,13 +146,13 @@
             }
         }
         get sessionCookieKey() {
-            if (!__classPrivateFieldGet(this, _InsticatorSession_accountId, "f")) {
+            if (!__classPrivateFieldGet(this, _SessionatorSession_accountId, "f")) {
                 return '';
             }
-            return __classPrivateFieldGet(this, _InsticatorSession_accountId, "f") + SESSION_COOKIE_NAME;
+            return __classPrivateFieldGet(this, _SessionatorSession_accountId, "f") + SESSION_COOKIE_NAME;
         }
         getSession() {
-            if (!__classPrivateFieldGet(this, _InsticatorSession_accountId, "f")) {
+            if (!__classPrivateFieldGet(this, _SessionatorSession_accountId, "f")) {
                 return null;
             }
             const existingCookie = Cookie.get(this.sessionCookieKey);
@@ -184,7 +184,7 @@
                 }
             }
             let referrer = document.referrer;
-            let campaign = InsticatorSession.getCampaignFromURL(window.location.href);
+            let campaign = SessionatorSession.getCampaignFromURL(window.location.href);
             if (!referrer) {
                 referrer = existingReferrer;
             }
@@ -194,7 +194,7 @@
             if (campaign !== existingCampaign) {
                 id = makeid(11);
             }
-            const expiration = new Date(InsticatorSession.getSessionExpires());
+            const expiration = new Date(SessionatorSession.getSessionExpires());
             const session = {
                 id,
                 expiration: formatDate(expiration),
@@ -217,10 +217,10 @@
             return campaign || null;
         }
     }
-    _InsticatorSession_accountId = new WeakMap();
+    _SessionatorSession_accountId = new WeakMap();
 
     function init() {
-        window.insticator = new InsticatorSession();
+        window.sessionator = new SessionatorSession();
     }
     init();
 

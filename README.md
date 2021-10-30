@@ -6,28 +6,28 @@ A session tracker that automatically keeps track of page loads for both SPAs and
 2. Initialize it with your property ID
 
 ```
-if (window.insticator) {
-  insticator.init('ABC') 
+if (window.sessionator) {
+  sessionator.init('ABC') 
   // Replace ABC with your property ID. Attributes future events etc to this account
 }
 ```
 
 ## The session instance
 
-The session isntance has been named `insticator` which can be configured to anything else. It is present in the window object
+The session isntance has been named `sessionator` which can be configured to anything else. It is present in the window object
 
 ## Tracking Events
 
 Events can be tracked using:
 ```
-insticator.pushEvent(eventName, eventProperties)
+sessionator.pushEvent(eventName, eventProperties)
 ```
 `eventProperties` being optional
 
 ## Getting the session object
 The session details can be obtained via the session instance
 ```
-insticator.getSession()
+sessionator.getSession()
 ```
 
 ## Demo

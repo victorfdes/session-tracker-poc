@@ -1,7 +1,7 @@
-import { InsticatorSession } from './session'
+import { SessionatorSession } from './session'
 
 function init () {
-  (<any>window).insticator = new InsticatorSession()
+  (<any>window).sessionator = new SessionatorSession()
 }
 
 init()
